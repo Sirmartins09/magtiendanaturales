@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mag Naturales - Productos Naturales</title>
+    <!-- Carga de Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace al archivo de estilos externo -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="body-layout">
+    <!-- Barra de promoción superior -->
+    <div class="promo-bar">
+        ¡Obtén 10% de descuento en tu primera compra!
+    </div>
+
+           <!-- Navegación principal -->
+  <header class="main-header">
+  <nav class="main-nav">
+    <div class="nav-left">
+      <a href="../index.html" class="logo-link">
+        <img src="../assets/img/logo.png" alt="Mag Naturales Logo" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li class="nav-dropdown" id="productsDropdown">
+          <a href="#" class="nav-dropdown-toggle" id="productsDropdownToggle">
+            Productos <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-menu" id="productsDropdownMenu">
+            <a href="../pages/frutos-secos.html">Frutos Secos</a>
+            <a href="../pages/mix.html">Mix de Frutos Secos y Snacks</a>
+            <a href="../pages/manies.html">Maníes</a>
+            <a href="../pages/frutas-desecadas.html">Frutas Desecadas</a>
+            <a href="../pages/semillas.html">Semillas</a>
+            <a href="../pages/desayunos-cereales.html">Desayunos y Cereales</a>
+            <a href="../pages/ingredientes.html">Ingredientes para Cocina y Despensa</a>
+            <a href="../pages/infuciones-tes.html">Infusiones y Tés</a>
+          </div>
+        </li>
+        <li><a href="../pages/contacto.html">Contacto</a></li>
+        <li><a href="../pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+      <a href="../pages/carrito.html" class="nav-icon cart-icon-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<main>
+      <div class="container">
+        <h1>¡Contáctanos!</h1>
+        <p class="info-text">Completa el formulario y envía tu consulta directamente por WhatsApp.</p>
+
+        <div class="form-group">
+            <label for="name">Tu Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Tu Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Tu Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="button" class="whatsapp-button" onclick="sendToWhatsApp()">Enviar por WhatsApp</button>
+    </div>
+ </main>
+
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Número de WhatsApp al que quieres que llegue el mensaje (incluye el código de país sin el "+")
+            const phoneNumber = '549261XXXXXXX'; // <-- ¡IMPORTANTE! Reemplaza con tu número de WhatsApp real (ej: 5492611234567)
+
+            // Codificar el mensaje para que sea válido en una URL
+            const whatsappMessage = encodeURIComponent(
+                `¡Hola! Tengo una consulta desde la web de frutos secos.\n\n` +
+                `Nombre: ${name || 'No especificado'}\n` +
+                `Email: ${email || 'No especificado'}\n\n` +
+                `Mensaje: \n${message || 'No se ingresó mensaje.'}`
+            );
+
+            // Construir la URL de WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+            // Abrir la URL en una nueva pestaña
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+ <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Columna 1: Logo y descripción -->
+            <div class="footer-col footer-col-1">
+                <img src="../assets/img/logo.png" alt="Mag Naturales Logo" class="footer-logo">
+                <p class="footer-description">
+                    Mag Naturales ofrece productos naturales de la más alta calidad para nutrir tu cuerpo y alma. Comprometidos con tu bienestar y la sostenibilidad.
+                </p>
+            </div>
+
+            <!-- Columna 2: Navegación rápida -->
+            <div class="footer-col footer-col-2">
+                <h5 class="footer-heading">Enlaces Rápidos</h5>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                    <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto y Redes Sociales -->
+            <div class="footer-col footer-col-3">
+                <h5 class="footer-heading">Contacto y Redes</h5>
+                <p class="footer-contact">magnaturales2@gmail.com/p>
+                <p class="footer-contact">Teléfono: +54 2615590045</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/magnaturales/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Puedes agregar más redes sociales aquí si lo deseas -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Mag Naturales. Todos los derechos reservados.
+        </div>
+    </footer>
+
+
+        <script src="../js/main.js" defer></script>
+</body>
+</html>

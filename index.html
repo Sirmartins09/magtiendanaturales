@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mag Naturales - Productos Naturales</title>
+    <!-- Carga de Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace al archivo de estilos externo -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="body-layout">
+    <!-- Barra de promoción superior -->
+    <div class="promo-bar">
+        "Armá tu pedido desde cualquier categoría y finalizalo por WhatsApp."
+    </div>
+
+
+<!-- Navegación principal -->
+<header class="main-header">
+  <nav class="main-nav">
+    
+    <!-- Logo -->
+    <div class="nav-left">
+      <a href="./index.html" class="logo-link">
+        <img src="./assets/img/logo.png" alt="Mag Naturales Logo" class="logo-img">
+      </a>
+    </div>
+
+    <!-- Enlaces de navegación -->
+    <ul class="nav-links">
+      <li><a href="./index.html">Inicio</a></li>
+
+      <!-- Dropdown Productos -->
+      <li class="nav-dropdown" id="productsDropdown">
+        <a href="#" class="nav-dropdown-toggle" id="productsDropdownToggle">
+          Productos <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="dropdown-menu" id="productsDropdownMenu">
+            <a href="./pages/frutos-secos.html">Frutos Secos</a>
+            <a href="./pages/mix.html">Mix de Frutos Secos y Snacks</a>
+            <a href="./pages/manies.html">Maníes</a>
+            <a href="./pages/frutas-desecadas.html">Frutas Desecadas</a>
+            <a href="./pages/semillas.html">Semillas</a>
+            <a href="./pages/desayunos-cereales.html">Desayunos y Cereales</a>
+            <a href="./pages/ingredientes.html">Ingredientes para Cocina y Despensa</a>
+            <a href="./pages/infuciones-tes.html">Infusiones y Tés</a>
+        </div>
+      </li>
+
+      <li><a href="./pages/contacto.html">Contacto</a></li>
+      <li><a href="./pages/blog.html">Blog</a></li>
+    </ul>
+
+    <!-- Íconos y botón hamburguesa -->
+    <div class="nav-right">
+      <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+      <a href="./pages/carrito.html" class="nav-icon cart-icon-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">3</span>
+      </a>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+
+    <main class="main-content">
+        <!-- Sección de Héroe/Banner -->
+        <section class="hero-section">
+            <h1 class="hero-title">Bienvenido a Mag Naturales</h1>
+            <p class="hero-subtitle">Productos frescos y naturales para una vida saludable.</p>
+            <a href="#" class="hero-button">Comprar Ahora</a>
+        </section>
+
+        <!-- Sección de Productos Principales -->
+        <section class="main-products-section" id="producos">
+            <h2 class="section-title">PRINCIPALES PRODUCTOS</h2>
+            <div class="products-grid">
+                <!-- Tarjeta de Producto 1 -->
+                <div class="product-card">
+                    <img src="./assets/img/baner-1.jpg" alt="Frutos Secos" class="product-image">
+                    <h3 class="product-title">FRUTOS SECOS</h3>
+                    <p class="product-description">Disfruta de nuestra selección premium.</p>
+                    <a href="./pages/frutos-secos.html" class="product-button">Ver Productos</a>
+
+                </div>
+                <!-- Tarjeta de Producto 2 -->
+                <div class="product-card">
+                    <img src="./assets/img/baner-2.jpg" alt="Semillas" class="product-image">
+                    <h3 class="product-title">SEMILLAS</h3>
+                    <p class="product-description">Variedad para una dieta balanceada.</p>
+                    <a href="./pages/semillas.html" class="product-button">Ver Productos</a>
+                </div>
+                <!-- Tarjeta de Producto 3 -->
+                <div class="product-card">
+                    <img src="./assets/img/baner-3.jpg" alt="Otras Delicias" class="product-image">
+                    <h3 class="product-title">OTRAS DELICIAS</h3>
+                    <p class="product-description">Sorpréndete con nuevos sabores.</p>
+                    <a href="./pages/desayunos-cereales.html" class="product-button">Ver Productos</a>
+                </div>
+            </div>
+        </section>
+
+<!-- Sección de Algunos Productos (cards con precio y añadir al carrito) -->
+<section class="some-products-section">
+    <h2 class="section-title">ALGUNOS PRODUCTOS</h2>
+    <div class="products-list-grid">
+
+     <!-- Producto Card 1 -->
+<div class="product-list-card" data-id="mix-clasico">
+    <img src="../assets/img/mix-clasico.jpg" alt="Mix Clásico" class="product-list-image">
+    <div class="product-list-details">
+        <h4 class="product-list-title">Mix Clásico (almendra, nuez, maní sin sal, pasas negras)</h4>
+        <p class="product-list-price">$ 1000/100 GR</p>
+        <div class="product-quantity-control">
+            <button class="quantity-button">-</button>
+            <span class="quantity-display">100 GR</span>
+            <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button">AÑADIR A LA CESTA</button>
+    </div>
+</div>
+
+<!-- Producto Card 2 -->
+<div class="product-list-card" data-id="mix-tropical">
+    <img src="./assets/img/mix-tropical.png" alt="Mix Tropical" class="product-list-image">
+    <div class="product-list-details">
+        <h4 class="product-list-title">Mix Tropical (maní, pasas, nuez, almendra, banana, papaya, ananá)</h4>
+        <p class="product-list-price">$ 1300/100 GR</p>
+        <div class="product-quantity-control">
+            <button class="quantity-button">-</button>
+            <span class="quantity-display">100 GR</span>
+            <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button">AÑADIR A LA CESTA</button>
+    </div>
+</div>
+
+<!-- Producto Card 3 -->
+<div class="product-list-card" data-id="mix-cervecero">
+    <img src="./assets/img/mix-cervecero.jpeg" alt="Mix Cervecero" class="product-list-image">
+    <div class="product-list-details">
+        <h4 class="product-list-title">Mix Cervecero ("Maíz Frito", "Maní Salado", "Maní Saborizado")</h4>
+        <p class="product-list-price">$ 1000/100 GR</p>
+        <div class="product-quantity-control">
+            <button class="quantity-button">-</button>
+            <span class="quantity-display">100 GR</span>
+            <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button">AÑADIR A LA CESTA</button>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Columna 1: Logo y descripción -->
+            <div class="footer-col footer-col-1">
+                <img src="./assets/img/logo.png" alt="Mag Naturales Logo" class="footer-logo">
+                <p class="footer-description">
+                    Mag Naturales ofrece productos naturales de la más alta calidad para nutrir tu cuerpo y alma. Comprometidos con tu bienestar y la sostenibilidad.
+                </p>
+            </div>
+
+            <!-- Columna 2: Navegación rápida -->
+            <div class="footer-col footer-col-2">
+                <h5 class="footer-heading">Enlaces Rápidos</h5>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
+                    <li><a href="./pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto y Redes Sociales -->
+            <div class="footer-col footer-col-3">
+                <h5 class="footer-heading">Contacto y Redes</h5>
+                <p class="footer-contact">magnaturales2@gmail.com/p>
+                <p class="footer-contact">Teléfono: +54 2615590045</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/magnaturales/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Puedes agregar más redes sociales aquí si lo deseas -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Mag Naturales. Todos los derechos reservados.
+        </div>
+    </footer>
+
+
+<script src="./js/main.js" defer></script>
+
+</script>
+</body>
+</html>
