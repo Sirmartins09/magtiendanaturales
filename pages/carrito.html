@@ -115,73 +115,59 @@
     </footer>
 
     <script src="../js/main.js" defer></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const container = document.querySelector(".cart-items-container");
-        const totalEl = document.getElementById("cart-total-price");
-        const emptyMsg = document.querySelector(".cart-empty-message");
-        const clearBtn = document.getElementById("clear-cart-button");
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.querySelector(".cart-items-container");
+    const totalEl = document.getElementById("cart-total-price");
+    const emptyMsg = document.querySelector(".cart-empty-message");
+    const clearBtn = document.getElementById("clear-cart-button");
 
-        if (cart.length === 0) {
-            emptyMsg.style.display = "block";
-            clearBtn.style.display = "none";
-        } else {
-            emptyMsg.style.display = "none";
-            clearBtn.style.display = "inline-block";
+    if (cart.length === 0) {
+        emptyMsg.style.display = "block";
+        clearBtn.style.display = "none";
+    } else {
+        emptyMsg.style.display = "none";
+        clearBtn.style.display = "inline-block";
 
-            let total = 0;
+        let total = 0;
 
-            cart.forEach(product => {
-                const item = document.createElement("div");
-                item.classList.add("cart-item");
-                item.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h4 class="cart-item-title">${product.name}</h4>
-                        <p class="cart-item-quantity">Cantidad: ${product.quantity} gr</p>
-                        <p class="cart-item-price">Precio por 100 GR: $${(product.pricePerUnit * 100).toFixed(2)}</p>
-                        <p class="cart-item-subtotal">Subtotal: $${product.totalPrice.toFixed(2)}</p>
-                        <button class="remove-item-button" data-id="${product.id}">Eliminar</button>
-                    </div>
-                `;
-                container.appendChild(item);
-                total += product.totalPrice;
-            });
+        cart.forEach(product => {
+            const item = document.createElement("div");
+            item.classList.add("cart-item");
+            item.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title">${product.name}</h4>
+                    <p class="cart-item-quantity">Cantidad: ${product.quantity} gr</p>
+                    <p class="cart-item-price">Precio por 100 GR: $${(product.pricePerUnit * 100).toFixed(2)}</p>
+                    <p class="cart-item-subtotal">Subtotal: $${product.totalPrice.toFixed(2)}</p>
+                    <button class="remove-item-button" data-id="${product.id}">Eliminar</button>
+                </div>
+            `;
+            container.appendChild(item);
+            total += product.totalPrice;
+        });
 
-            totalEl.textContent = `$${total.toFixed(2)}`;
+        totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    container.addEventListener("click", e => {
+        if (e.target.classList.contains("remove-item-button")) {
+            const id = e.target.dataset.id;
+            const updatedCart = cart.filter(p => p.id !== id);
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            location.reload(); // Volver a cargar para ver cambios
         }
-
-        container.addEventListener("click", e => {
-            if (e.target.classList.contains("remove-item-button")) {
-                const id = e.target.dataset.id;
-                const updatedCart = cart.filter(p => p.id !== id);
-                localStorage.setItem("cart", JSON.stringify(updatedCart));
-                location.reload(); // Volver a cargar para ver cambios
-            }
-        });
-
-        document.getElementById("clear-cart-button").addEventListener("click", () => {
-            localStorage.removeItem("cart");
-            location.reload();
-        });
-
-        document.getElementById("checkout-whatsapp-button").addEventListener("click", () => {
-            if (cart.length === 0) return alert("Tu carrito está vacío.");
-
-            let message = "¡Hola! Quiero hacer un pedido:\n\n";
-            let total = 0;
-            cart.forEach((p, i) => {
-                message += `${i + 1}. ${p.name} - ${p.quantity}gr - $${p.totalPrice.toFixed(2)}\n`;
-                total += p.totalPrice;
-            });
-
-            message += `\nTotal: $${total.toFixed(2)}\nGracias.`;
-            const whatsappUrl = `https://wa.me/5492615590045?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, "_blank");
-        });
     });
+
+    document.getElementById("clear-cart-button").addEventListener("click", () => {
+        localStorage.removeItem("cart");
+        location.reload();
+    });
+});
 </script>
+
 
 
 </body>
