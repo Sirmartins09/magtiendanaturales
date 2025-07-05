@@ -239,3 +239,42 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("clear-cart-button")?.addEventListener("click", clearCart);
     }
 });
+
+//lupita buscador//
+document.addEventListener("DOMContentLoaded", () => {
+  const searchIcon = document.getElementById("search-icon");
+  const searchInput = document.getElementById("search-input");
+  const products = document.querySelectorAll(".product-list-card");
+
+  function filterProducts() {
+    const query = searchInput.value.toLowerCase().trim();
+    products.forEach(product => {
+      const title = product.querySelector(".product-list-title").textContent.toLowerCase();
+      product.style.display = title.includes(query) ? "block" : "none";
+    });
+  }
+
+  searchIcon.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (searchInput.style.display === "none" || searchInput.style.display === "") {
+      searchInput.style.display = "inline-block";
+      searchInput.focus();
+    } else {
+      searchInput.style.display = "none";
+      searchInput.value = "";
+      products.forEach(p => p.style.display = "block");
+    }
+  });
+
+  searchInput.addEventListener("input", filterProducts);
+
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      filterProducts();
+    }
+  });
+});
+
+
+

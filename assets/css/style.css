@@ -86,6 +86,7 @@ h1, h2, h3, h4, .section-title, .product-list-title {
     background-color: var(--green-mag);
     color: var(--white);
     text-align: center;
+    padding: 20px;
     padding-top: 0.5rem; /* py-2 */
     padding-bottom: 0.5rem; /* py-2 */
     font-size: 0.875rem; /* text-sm */
@@ -341,6 +342,14 @@ h1, h2, h3, h4, .section-title, .product-list-title {
 .rotate {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
+}
+/*lupita*/
+#search-input {
+  padding: 4px 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 8px;
 }
 
 /* Contenido principal */
