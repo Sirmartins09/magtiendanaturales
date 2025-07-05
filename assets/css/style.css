@@ -1126,4 +1126,7 @@ textarea {
   .nav-dropdown .dropdown-menu.show-dropdown {
     display: block;
   }
+  .promo-bar {
+    padding: 20px;
+}
 }
